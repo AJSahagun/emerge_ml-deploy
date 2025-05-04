@@ -1,0 +1,18 @@
+pip==24.0
+
+# Core ML/NLP Libraries
+torch>=1.9.0,<2.0.0       # Match PyTorch version used for training if possible
+transformers>=4.20.0,<4.30.0 # Match version used for training
+spacy==3.8.5            # For preprocessing steps if needed
+nltk==3.9.1             # For preprocessing steps if needed
+scikit-learn            # For metrics or other utilities if needed
+lingua-language-detector # If language detection is part of inference preprocessing
+# tl_calamancy_md >= 0.2.0 # Add this if your preprocessing code *in the container* uses it
+
+# Web Server & Utilities
+Flask>=2.0.0
+gunicorn>=20.0.0        # WSGI server for Flask
+pandas                  # For data handling if needed within predict
+numpy                   # For numerical operations
+gcsfs                   # If loading anything directly from GCS at runtime (usually not needed if files copied)
+google-cloud-storage    # If interacting with GCS explicitly
